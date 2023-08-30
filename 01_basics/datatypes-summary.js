@@ -12,12 +12,12 @@ let userEmail;
 
 const id = Symbol("123")
 const anotherId = Symbol("123")
-// console.log(id === anotherId)
+console.log(id === anotherId)
 
 const bigNumber = 2343543423n;
-// console.log(bigNumber)
+console.log(bigNumber)
 
-// console.log(typeof name)
+console.log(typeof name)
 
 // Non Primitive(Reference)
 // Arrays, Objects, Functions
@@ -33,7 +33,7 @@ const myFunc = function(){
     console.log("Hello World")
 }
 
-// console.log(typeof heroes)
+console.log(typeof heroes)
 
 
 // ++++++++++++++++++++++ Stack and Heap Management +++++++++++++++++++++++
@@ -44,8 +44,8 @@ let universityName = "Gujarat Technological University"
 let newUniversityName = universityName
 newUniversityName = "Sankalchand Patel University"
 
-// console.log(universityName)
-// console.log(newUniversityName)
+console.log(universityName)
+console.log(newUniversityName)
 
 let userOne = {
     email: "vedant@gtu.com",
