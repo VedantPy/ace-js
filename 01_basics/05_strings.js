@@ -1,15 +1,15 @@
 const name = "vedant"
 const repoCount = 50
 
-// console.log("My name is " + name + " and my repo count is " + repoCount)
-console.log(`My name is ${name} and my repo count is ${repoCount}`)
+console.log("My name is " + name + " and my repo count is " + repoCount)
+console.log(`My name is ${name} and my repo count is ${repoCount}`) // Recommended way 
 
 const gameName = new String("Black-Leo")
 
-// console.log(gameName[0])
-// console.log(gameName.__proto__)
-// console.log(gameName.length)
-// console.log(gameName.toLowerCase())
+console.log(gameName[0])
+console.log(gameName.__proto__)
+console.log(gameName.length)
+console.log(gameName.toLowerCase())
 console.log(gameName.charAt(3))
 console.log(gameName.indexOf('c'))
 
