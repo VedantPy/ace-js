@@ -3,7 +3,7 @@ const tinder = new Object()
 tinder.id = "123abc"
 tinder.name = "Vedant"
 tinder.isLoggedIn = false
-// console.log(tinder)
+console.log(tinder)
 
 const regularUser = {
     email: "vedant@spu.ac.in",
@@ -15,7 +15,7 @@ const regularUser = {
     }
 }
 
-// console.log(regularUser.fullname.userFullName.firstname)
+console.log(regularUser.fullname.userFullName.firstname)
 
 const obj1 = { 1: "a", 2: "b" }
 const obj2 = { 3: "a", 4: "b" }
@@ -24,7 +24,7 @@ const obj3 = { 5: "a", 6: "b" }
 // const obj4 = {obj1, obj2, obj3} // It will create the nested objects.
 // const obj4 = Object.assign({}, obj1, obj2, obj3) // It will do the expected result
 const obj4 = { ...obj1, ...obj2, ...obj3 } //Spread operator gigachad
-// console.log(obj4)
+console.log(obj4)
 
 const users = [
     {
@@ -40,11 +40,11 @@ const users = [
         email: "c@gmail.com"
     },
     {
-        id:4,
+        id: 4,
         email: "d@gmail.com"
     }
 ]
-// console.log(users[1].email)
+console.log(users[1].email)
 
 console.log(tinder)
 console.log(Object.keys(tinder))
@@ -53,3 +53,31 @@ console.log(Object.entries(tinder))
 
 console.log(tinder.hasOwnProperty("isLogged"))
 
+// ++++++++++++++++ Objects Destructuring and JSON API ++++++++++++++++
+
+const course = {
+    coursename: "ace-js",
+    price: "999",
+    courseInstructor: "Vedant"
+}
+
+const {courseInstructor : instructor} = course
+console.log(instructor)
+
+// JSON APIs
+
+
+// {
+//     "name": "vedant",
+//     "coursename" : "ace-js",
+//     "price" : "free"
+// }
+
+// Sometimes we get APIs in Array form
+// [
+//     {},
+//     {},
+//     {}
+// ]
+
+// Also check randomuser.me to visualize JSON APIs also use JSON formatter
