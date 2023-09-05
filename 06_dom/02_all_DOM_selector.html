@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            color: #ffffff;
+            background-color: #212121;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="bg-black">
+        <h1 id="title" class="heading bg-black">DOM Learning with me 😉 <span style="display: none;">test text for innerText and textContent</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+        <ul>
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+        </ul>
+    </div>
+    <script>
+        // const l = document.getElementsByClassName("list-item")
+    </script>
+</body>
+</html>
+
+<!-- All DOM selector -->
+<!-- 
+    -Open this file in browser and try these scripts in console
+
+    -document.getElementById("title")
+        -It will return the object having id as title
+
+    -document.getElementById("title").id
+        -It will return the id of that particular element
+
+    -document.getElementById("title").className
+        -It will return the class of that particular element (Note: we're using className instead of class as class is a keyword in JavaScript)
+
+    -document.getElementById("title").getAttribute("id/class/style")
+        -It will return the value of the attribute that is passed to the getAttribute()
+
+    -document.getElementById("title").setAttribute("class", "test")
+        It will overwrite all the classes by the given parameter in the setAttribute()
+
+    -const title = document.getElementById("title")
+    -title.style.backgroundColor = "red"
+    -title.style.padding
+
+    - innerText v/s textContent
+
+        - innerText will only display the visible text i.e the text is displayed on the screen
+            -title.innerText
+
+        - textContent will display all the text written in the object whether it is hidden by styling elements or not.
+            -title.textContent
+
+        - innerHTML will also display the nested HTML tags.
+            -title.innerHTML
+
+    -querySelector
+
+    -document.querySelector("h1")
+        - It will return the first h1 element element in the heading 1
+
+    -document.querySelector("#title")
+        - It wll return the element having title as id
+
+    -document.querySelector(".heading")
+        -It will return the element having heading as a class
+
+    -document.querySelector("input[type='password']")
+
+    -Practice Test: make an unordered list which has three li elements and turn the background color of first li element to green
+        -const myUl = document.querySelector("ul")
+        -const myLi = document.querySelector("li")
+        -myLi.style.backgroundColor = "green" 
+
+    -querySelectorAll
+
+    -document.querySelectorAll("li")
+        - It will return the NodeList of li elements
+        - NodeList is different from Array, we can only use forEach loop on NodeList, there are ways to convert NodeList into Array
+        - Example
+            const l = document.querySelectorAll("li")
+            l.forEach((li)=>{
+                console.log(li.textContent)
+            })
+
+    -getElementsByClassName
+
+    -document.getElementsByClassName("list-item")
+    -It will return the HTML Collection of elements that have list-item class
+    -If we've to do some task on the HTML Collection we'll convert it into array first
+        - To convert HTML Collection to Array we'll use Array.from(variable)
+
+    -Play in console at any website
+
+ -->
