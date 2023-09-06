@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Edit or Remove Element</title>
+</head>
+<body style="background-color:#212121; color: #ffff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement("li")
+        li.innerHTML = `${langName}`
+        document.querySelector(".language").appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptimizedLanguage(langName){
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptimizedLanguage("golang")
+
+    // Edit an element
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Mojo"
+    const newLi = document.createElement("li")
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    // Another edit example for practice 
+    // Replace javascript with typescript
+
+    const firstLang = document.querySelector("li:first-child")
+    // firstLang.innerHTML = "typescript"
+    firstLang.outerHTML = "<li>TypeScript</li>"
+    // const anotherNewLi = document.createElement("li")
+    // anotherNewLi.textContent = "typescript"
+    // firstLang.replaceWith(anotherNewLi)
+
+    // Remove an element 
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+
+</script>
+</html>
