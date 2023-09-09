@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async js</title>
+</head>
+
+<body style="background-color: #212121; color: #ffffff;">
+    <h1>Vedant Pandey <span id="vary">a student</span> </h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayVedant = function () {
+        console.log("Vedant")
+    }
+    const changeText = function () {
+        document.querySelector("#vary").innerHTML = "a Web Developer"
+    }
+    const stopChange = setTimeout(changeText, 2000)
+    
+    document.querySelector("#stop").addEventListener("click", function(){
+        clearTimeout(stopChange)
+        console.log("STOPPED")
+    })
+</script>
+
+</html>
