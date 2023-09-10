@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #ffffff;">
+    <table border="1">
+        <tr>
+            <th>Value</th>
+            <th>State</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>UNSENT</td>
+            <td>Client has been created. open() not called yet.</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>OPENED</td>	
+            <td>open() has been called.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>HEADERS_RECEIVED</td>
+            <td>send() has been called, and headers and status are available.</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>LOADING</td>
+            <td>Downloading; responseText holds partial data.</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>DONE</td>
+            <td>The operation is complete.</td>
+        </tr>
+    </table>
+</body>
+<script>
+    const requestURL = "https://api.github.com/users/VedantPy"
+    const xhr = new XMLHttpRequest()
+    xhr.open("GET", requestURL)
+</script>
+</html>
