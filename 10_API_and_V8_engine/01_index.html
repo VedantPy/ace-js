@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 </head>
+
 <body style="background-color: #212121; color: #ffffff;">
     <table border="1">
         <tr>
@@ -19,7 +22,7 @@
         </tr>
         <tr>
             <td>1</td>
-            <td>OPENED</td>	
+            <td>OPENED</td>
             <td>open() has been called.</td>
         </tr>
         <tr>
@@ -38,20 +41,38 @@
             <td>The operation is complete.</td>
         </tr>
     </table>
+        <div class="d-flex card justify-content-center" style="width: 18rem;">
+            <img src="" id="cardImg" class="card-img-top" alt="userImage">
+            <div class="card-body">
+                <h5 id="userName" class="card-title"></h5>
+                <p id="followers" class="card-text">Followers: <span id="followersCount"></span></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 <script>
     const requestUrl = 'https://api.github.com/users/VedantPy'
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', requestUrl)
-    xhr.onreadystatechange = function(){
-        console.log(xhr.readyState);
+    const xhr = new XMLHttpRequest()
+    const cardImg = document.querySelector("#cardImg")
+    const userName = document.querySelector("#userName")
+    const followersCount = document.querySelector("#followersCount")
+    xhr.open("GET", requestUrl)
+    // console.log(xhr.readyState) //it will print only 1 as only one state gets changed, but in real readyState gets changed.
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState)
         if (xhr.readyState === 4) {
             const data = JSON.parse(this.responseText)
-            console.log(typeof data);
-            console.log(data.followers);
-            console.log(data.twitter_username);
+            console.log(data.followers)
+            cardImg.setAttribute("src", data.avatar_url)
+            userName.innerHTML = `Username: ${data.login}`
+            followersCount.innerHTML = data.followers
         }
     }
-    xhr.send();
+    xhr.send()
+
+
 </script>
+
 </html>
